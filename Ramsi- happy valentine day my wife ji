@@ -93,7 +93,7 @@
 <body>
 
   <div class="container">
-    <h1>Ramsii ❤️</h1>
+    <h1>hey Ramsii ❤️</h1>
     <p id="msg">Will you be my Valentine? 🥺💖</p>
 
     <div class="btns">
@@ -118,7 +118,7 @@
       "Without you I am incomplete 🥺",
       "Say YES or I will cry 😭😭",
       "You only have one choice 😌",
-      "Ramsii my cute wife 😍",
+      "Ramsii pls say yes my cutie 😍",
       "No button is useless now 😤",
       "Please please please 😭❤️",
       "Now only YES is left 😎"
@@ -143,7 +143,7 @@
 
     function yesClick() {
       const msg = document.getElementById("msg");
-      msg.innerHTML = "Yayyy Ramsii 😍💍❤️ <br> I Love You So Muchhh 💖💖💖";
+      msg.innerHTML = "thxnn for being mine ..Ramsii 😍💍❤️ <br> I Love You So Muchhh 💖💖💖";
 
       document.getElementById("yesBtn").style.display = "none";
       document.getElementById("noBtn").style.display = "none";
