@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramsii ❤️ Valentine</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      color: white;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 15px;
+      min-height: 50px;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #00ff88;
+      color: black;
+      font-weight: bold;
+    }
+
+    #noBtn {
+      background: #ff2e63;
+      color: white;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      animation: float 3s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>hey Ramsii ❤️</h1>
+    <p id="msg">Will you be my Valentine? 🥺💖</p>
+
+    <div class="btns">
+      <button id="yesBtn" onclick="yesClick()">Yes 💍</button>
+      <button id="noBtn" onclick="noClick()">No 😒</button>
+    </div>
+  </div>
+
+  <script>
+    let noCount = 0;
+    let yesSize = 18;
+
+    const excuses = [
+      "Come on Ramsii please 🥺",
+      "Just say YES once 😭",
+      "Baby don't do this to me 😩",
+      "Ramsii you are my life ❤️",
+      "No is not allowed 😤",
+      "You have to say YES 😈",
+      "From today, you are my Valentine 💘",
+      "No option is not working anymore 😭",
+      "Without you I am incomplete 🥺",
+      "Say YES or I will cry 😭😭",
+      "You only have one choice 😌",
+      "Ramsii pls say yes my cutie 😍",
+      "No button is useless now 😤",
+      "Please please please 😭❤️",
+      "Now only YES is left 😎"
+    ];
+
+    function noClick() {
+      const msg = document.getElementById("msg");
+      const yesBtn = document.getElementById("yesBtn");
+
+      msg.innerText = excuses[noCount % excuses.length];
+
+      noCount++;
+
+      // YES button grows bigger every time
+      yesSize += 6;
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = (12 + noCount * 2) + "px " + (20 + noCount * 3) + "px";
+
+      // Heart animation
+      createHeart();
+    }
+
+    function yesClick() {
+      const msg = document.getElementById("msg");
+      msg.innerHTML = "thxnn for being mine ..Ramsii 😍💍❤️ <br> I Love You So Muchhh 💖💖💖";
+
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
+
+      for(let i=0; i<30; i++){
+        setTimeout(createHeart, i*100);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "100vh";
+      heart.style.fontSize = (Math.random() * 30 + 15) + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
+                                  
